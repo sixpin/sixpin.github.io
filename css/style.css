@@ -3,59 +3,99 @@ html, body, .a {
     padding: 0;
     height: 100%;
     width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.a {
-    display: table;
+@media (min-width: 100px) {
+    html {
+        font-size: 6em;
+    }
 }
 
-.b {
-    display: table-cell;
-    margin: 0;
-    padding: 0;
-
-    text-align: center;
-    vertical-align: middle;
+@media (min-width: 400px) {
+    html {
+        font-size: 10em;
+    }
 }
 
-#content {
-    width: 700px;
-    margin: auto;
+@media (min-width: 1080px) {
+    html {
+        font-size: 20em;
+    }
 }
 
-h1, 
-.pure-menu-heading,
-.pure-menu-link,
-#mailto {
-    margin: auto auto;
-    display: block;
-    text-transform: none;
-    font-family: 'Source Code Pro', monospace;
+#mage {
+    max-width: 50%;
+	-webkit-animation: rotate-center 30s linear infinite both;
+	        animation: rotate-center 30s linear infinite both;
 }
 
-h1,
-.pure-menu-heading {
-    color: #FB6900;
+@-webkit-keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
+}
+@keyframes rotate-center {
+    0% {
+        -webkit-transform: rotate(0);
+                transform: rotate(0);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+    }
 }
 
-.pure-menu-link,
-#mailto {
-    color: #00B9BD;
-}
-
-.pure-menu-link:hover {
-    background: none;
-}
-
-.pure-menu {
-    font-size: 28px;
-}
-
-.pure-menu-heading {
-    padding-left: 20px;
-}
-
-.pure-menu-list {
-    float: right;
-    padding-right: 20px;
-}
+  .bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(-60deg, #6c3 50%, #09f 50%);
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-direction:alternate-reverse;
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  
+  .content {
+    background-color:rgba(255,255,255,.8);
+    border-radius:.25em;
+    box-shadow:0 0 .25em rgba(0,0,0,.25);
+    box-sizing:border-box;
+    left:50%;
+    padding:10vmin;
+    position:fixed;
+    text-align:center;
+    top:50%;
+    transform:translate(-50%, -50%);
+  }
+  
+  h1 {
+    font-family:monospace;
+  }
+  
+  @keyframes slide {
+    0% {
+      transform:translateX(-25%);
+    }
+    100% {
+      transform:translateX(25%);
+    }
+  }
